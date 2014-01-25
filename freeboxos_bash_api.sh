@@ -88,12 +88,14 @@ function wifi_control {
 
 	if [[ "$1" == "start" ]]; then
 		answer=$(curl -s "http://mafreebox.freebox.fr/api/v1/wifi/config/" -X PUT "${options[@]}" -d '{ "ap_params": { "enabled":true } }')
-		echo "Wifi is now Activated"
+		NOW=$(date +"%m/%d/%Y  %r")
+		echo "$NOW  -->  Wifi is now Activated"
 	fi
 
 	if [[ "$1" == "stop" ]]; then
 		answer=$(curl -s "http://mafreebox.freebox.fr/api/v1/wifi/config/" -X PUT "${options[@]}" -d '{ "ap_params": { "enabled":false } }')
-		echo "Wifi is now Disabled"
+		NOW=$(date +"%m/%d/%Y  %r")
+		echo "$NOW  -->  Wifi is now Disabled"
 	fi
 
 	_check_success "$answer" || return 1
