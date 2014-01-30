@@ -1,0 +1,29 @@
+#Check Wifi Status
+
+# 22h30 Lundi au Vendredi
+30 22 * * 1-5	bash /domo/freebox/wifi_status.sh >> /domo/freebox/log/status.log 2>&1
+
+# 6H30 Lundi au Vendredi
+30 6 * * 1-5	bash /domo/freebox/wifi_status.sh >> /domo/freebox/log/status.log 2>&1
+
+# 9H30 Lundi au Vendredi
+30 9 * * 1-5	bash /domo/freebox/wifi_status.sh >> /domo/freebox/log/status.log 2>&1
+
+# 12H30 Lundi au Vendredi
+30 12 * * 1-5	bash /domo/freebox/wifi_status.sh >> /domo/freebox/log/status.log 2>&1
+
+# 14H30 Lundi au Vendredi
+30 14 * * 1-5	bash /domo/freebox/wifi_status.sh >> /domo/freebox/log/status.log 2>&1
+
+00 17 * * 1-5	bash /domo/freebox/wifi_status.sh >> /domo/freebox/log/status.log 2>&1
+
+55 23 * * 1-5	bash /domo/freebox/wifi_status.sh >> /domo/freebox/log/status.log 2>&1
+
+00 22 * * 1-5	bash /domo/freebox/wifi_control.sh stop >> /domo/freebox/log/cron.log 2>&1
+00 6 * * 1-5	bash /domo/freebox/wifi_control.sh start >> /domo/freebox/log/cron.log 2>&1
+00 9 * * 1-5	bash /domo/freebox/wifi_control.sh stop >> /domo/freebox/log/cron.log 2>&1
+50 11 * * 1-5	bash /domo/freebox/wifi_control.sh start >> /domo/freebox/log/cron.log 2>&1
+5 14 * * 1-5	bash /domo/freebox/wifi_control.sh stop >> /domo/freebox/log/cron.log 2>&1
+30 16 * * 1-5	bash /domo/freebox/wifi_control.sh start >> /domo/freebox/log/cron.log 2>&1
+50 23 * * 6,0	bash /domo/freebox/wifi_control.sh stop >> /domo/freebox/log/cron.log 2>&1
+00 8 * * 6,0	bash /domo/freebox/wifi_control.sh start >> /domo/freebox/log/cron.log 2>&1
