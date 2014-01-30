@@ -74,11 +74,13 @@ function wifi_status {
 	wifi_status=$(get_json_value_for_key "$result" 'active')
 
 	if [[ "$wifi_status" == true ]]; then
-		echo "Wifi is Activated"
+		NOW=$(date +"%m/%d/%Y  %r")
+		echo "$NOW ---> Wifi is Activated"
 	fi
 
 	if [[ "$wifi_status" == false ]]; then
-		echo "Wifi is Disabled"
+		NOW=$(date +"%m/%d/%Y  %r")
+		echo "$NOW ---> Wifi is Disabled"
 	fi
 }
 
